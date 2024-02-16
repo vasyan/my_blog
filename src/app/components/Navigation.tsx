@@ -34,6 +34,9 @@ export const Navigation = () => {
           <li className="nav-item">
             <a onClick={handleNavigate} className="nav-link" href="mailto:vasilyator@gmail.com">Mail</a>
           </li>
+          <li className="nav-item">
+            <a onClick={handleNavigate} className="nav-link" href="https://revfella.com">RevFella</a>
+          </li>
         </ul>
         <a
           className="img-rss"

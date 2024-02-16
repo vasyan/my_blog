@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Script from 'next/script'
 import type { Metadata } from 'next'
 import heroImgSrc from '../../public/hero.svg'
 import dockerImgSrc from '../../public/docker.svg'
@@ -28,19 +27,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      {process.env.NEXT_PUBLIC_BUILD_ENV === 'production' && (
-        <>
-          <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_TAG_MANAGER_ID}`} strategy="lazyOnload"/>
-          <Script id="google-analytics" strategy="lazyOnload">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_TAG_MANAGER_ID}');
-            `}
-          </Script>
-        </>
-      )}
       <main className="main-container">
         <div className="container">
           <section id="hero" className="section d-flex flex-column flex-lg-row-reverse justify-content-center align-items-center">
