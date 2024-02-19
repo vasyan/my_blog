@@ -216,3 +216,12 @@ p {
     padding-bottom: 0;
   }
 }
+
+
+.contact-card-item {
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: $gray-100;
+    @extend .shadow;
+  }
+}

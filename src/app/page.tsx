@@ -45,7 +45,7 @@ export default function Home() {
             <div className="text-md-center text-lg-start hero-text-block">
               <h1 className="hero-heading mb-2">Vasily Styazhkin</h1>
               <p className="text-paragraph mb-0">
-                I do code for a decade. Email me at <a href="mailto:vasilyator@gmail.com">vasilyator@gmail.com</a>
+                Code since 2013. Email me at <a href="mailto:vasilyator@gmail.com">vasilyator@gmail.com</a>
               </p>
             </div>
           </section>

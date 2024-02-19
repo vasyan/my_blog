@@ -26,16 +26,10 @@ export const Navigation = () => {
             <a onClick={handleNavigate} className="nav-link" href="/blog">Blog</a>
           </li>
           <li className="nav-item">
-            <a onClick={handleNavigate} className="nav-link" href="https://github.com/vasyan">Github</a>
+            <a onClick={handleNavigate} className="nav-link" href="/contact-card-info">Contacts</a>
           </li>
           <li className="nav-item">
-            <a onClick={handleNavigate} className="nav-link" href="https://www.linkedin.com/in/styazhkinv/">LinkedIn</a>
-          </li>
-          <li className="nav-item">
-            <a onClick={handleNavigate} className="nav-link" href="mailto:vasilyator@gmail.com">Mail</a>
-          </li>
-          <li className="nav-item">
-            <a onClick={handleNavigate} className="nav-link" href="https://revfella.com">RevFella</a>
+            <a onClick={handleNavigate} className="nav-link" href="/projects">Projects</a>
           </li>
         </ul>
         <a
