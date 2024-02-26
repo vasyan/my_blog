@@ -18,22 +18,33 @@
     "encoding": "^0.1.13",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
+    "install": "^0.13.0",
     "next": "13.4.9",
     "next-sitemap": "^4.2.3",
+    "npm": "^10.4.0",
     "react": "^18",
     "react-dom": "^18",
     "rehype-stringify": "^10.0.0",
-    "remark": "^15.0.1",
-    "remark-html": "^16.0.1",
-    "remark-parse": "^11.0.0",
-    "remark-rehype": "^11.0.0",
+    "remark": "9.0.0",
+    "remark-attr": "^0.11.1",
+    "remark-html": "^13.0.1",
+    "remark-ignore": "^2.0.0",
+    "remark-parse": "8.0.3",
+    "remark-rehype": "10.0.0",
     "sass": "^1.69.1",
+    "to-vfile": "^8.0.0",
     "typescript": "^5.2.2",
-    "unified": "^11.0.4",
+    "unified": "^7.0.4",
+    "unified-engine": "^11.2.0",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "eslint": "^8",
     "eslint-config-next": "13.5.4"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-ignore"
+    ]
   }
 }
