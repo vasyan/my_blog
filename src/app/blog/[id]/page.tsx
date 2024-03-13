@@ -16,6 +16,16 @@ export default async function Post({ params }: any) {
         <h1>{postData.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </div>
+      <div dangerouslySetInnerHTML={{__html: `
+        <script src="https://utteranc.es/client.js"
+          repo="vasyan/my_blog"
+          issue-term="pathname"
+          label="comment"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+        </script>
+      `}}/>
     </main>
   );
 }
