@@ -31,6 +31,9 @@ export const Navigation = () => {
           <li className="nav-item">
             <a onClick={handleNavigate} className="nav-link" href="/projects">Projects</a>
           </li>
+          <li className="nav-item">
+            <a onClick={handleNavigate} className="nav-link" href="/lab">Lab</a>
+          </li>
         </ul>
         <a
           className="img-rss"
