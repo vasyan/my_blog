@@ -8,6 +8,8 @@ categories:
 
 Full code and demo available at [codesandbox](https://codesandbox.io/p/sandbox/react-dnd-with-scrolling-cvvw8f)
 
+![demo](/react-dnd-scrolling.gif)
+
 Recently, I found myself needing a sortable list with drag-n-drop in react application. In my opinion, [react-dnd](https://react-dnd.github.io/react-dnd/) is an excellent lightweight library that provides a very flexible API. However, you have to implement any extra by yourself.
 There are several alternatives that are ready to solve this problem, but they can bloat your project-dependency-weight as a trade-off. This might be fine for many cases, but this project too cozy for such a thing. So, let's DIY!
 
