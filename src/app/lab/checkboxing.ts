@@ -1,5 +1,8 @@
-"use client";
 import * as buffers from './buffers';
+
+function isMobileDevice() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
 
 let getElementsCache: any;
 function getPixels () {
@@ -9,10 +12,19 @@ function getPixels () {
   return elements;
 }
 
+let iDoBlockRoutineRunning = false;
 const CHECKBOX_SIZE = 13;
+const CHECKBOX_SIZE_MOBILE = 8;
 type Resolution = [number, number];
 function getResolution(): Resolution {
-  return [Math.floor(window.innerWidth / CHECKBOX_SIZE), Math.floor(((window.innerHeight - 80) / 2) / CHECKBOX_SIZE)];
+  const viewportWidth = window.innerWidth;
+  const isMobile = isMobileDevice() || viewportWidth < 768;
+  const size = isMobile ? CHECKBOX_SIZE_MOBILE : CHECKBOX_SIZE;
+  return [
+    Math.floor(window.innerWidth / size),
+    // Math.floor(((window.innerHeight - (isMobile ? 230 : 140))) / size)
+    Math.floor(((window.innerHeight - 120)) / size)
+  ];
 }
 
 type TextObject = {
@@ -37,6 +49,10 @@ const vasilyator: TextObject = {
 const iDo: TextObject = {
   buffer: buffers.iDo,
   width: buffers.iDo.length / 5,
+}
+const hireMe: TextObject = {
+  buffer: buffers.hireMe,
+  width: buffers.hireMe.length / 5,
 }
 const doTs: TextObject = {
   buffer: buffers.doTs,
@@ -72,7 +88,7 @@ type DrawItem = {
 type DrawQueue = DrawItem[];
 
 async function drawToCanvas (queue: DrawQueue) {
-  console.log('[log] drawToCanvas', queue);
+  // console.log('[log] drawToCanvas', queue);
   const [canvasWidth, canvasHeight] = getResolution();
   // const canvas = document.createElement('canvas');                               
   // const context = canvas.getContext('2d');                                       
@@ -135,11 +151,13 @@ async function drawToCanvas (queue: DrawQueue) {
     })
   );
 
-  console.log('startIndex', startIndex, endIndex);
+  // console.log('startIndex', startIndex, endIndex);
 
   // Calculate merged buffer dimensions
   for (let i = 0; i < queue.length; i++) {
-    const buffer = typeof queue[i].textObject.buffer === 'function' ? await queue[i].textObject.buffer() : queue[i].textObject.buffer;
+    const buffer = typeof queue[i].textObject.buffer === 'function'
+      ? await (queue[i].textObject.buffer as BufferGetter)()
+      : queue[i].textObject.buffer;
     // console.log('buffer', buffer);
     maxHeight = Math.max(
       maxHeight,
@@ -214,22 +232,46 @@ function getStartY (drawItem: DrawItem, canvasHeight: number) {
   return renderStartY;
 }
 
-function renderCheckboxes() {
-  console.log('[log] renderCheckboxes');
-  if (document.querySelector(".checkbox-display input")) {
+function renderCheckboxes(force: boolean = false) {
+  // console.log('[log] renderCheckboxes');
+  if (!force && document.querySelector(".checkbox-display input")) {
     console.log('[log] renderCheckboxes already rendered');
     return;
   }
 
   const [cols, rows] = getResolution();
+  const area = cols * rows;
+
+  if (force) {
+    const elem = document.querySelector(".checkbox-display");
+    if (elem) elem.innerHTML = '';
+    // if (elem) {
+    //   const delta = area - elem.children.length;
+
+    //   console.log('delta', delta);
+
+    //   if (delta > 0) {
+    //     for (let i = 0; i < delta; i++) {
+    //       const checkbox = document.createElement("input");
+    //       checkbox.type = "checkbox";
+    //       elem.appendChild(checkbox);
+    //     }
+    //   } else if (delta < 0) {
+    //     for (let i = 0; i < Math.abs(delta); i++) {
+    //       elem.removeChild(elem.lastElementChild as Node);
+    //     }
+    //   }
+    // }
+  }
+
   const fragment = document.createDocumentFragment();
-  for (let i = 0; i < cols * rows; i++) {
+  for (let i = 0; i < area; i++) {
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     fragment.appendChild(checkbox);
   }
 
-  console.log('[log] renderCheckboxes appending fragment');
+  // console.log('[log] renderCheckboxes appending fragment');
   document.querySelector(".checkbox-display")?.appendChild(fragment);
 }
 
@@ -291,23 +333,28 @@ function getSvgBuffer(svg: string, size: [number, number]): Promise<Array<1 | 0>
   });
 }
 
+
 (function main () {
+  console.log('[log] main');
   if (typeof document === 'undefined') return;
   const main = document.createElement('main')
-  main.className = 'main-container d-flex align-items-center';
+  main.className = 'homepage-main-container d-flex align-items-center';
   const displayEl = document.createElement('div');
   displayEl.className = 'checkbox-display';
   main.appendChild(displayEl);
-  document.body.appendChild(main);
+  // document.body.appendChild(main);
+  document.querySelector('.draw-here')?.appendChild(main);
 
   listenEvents();
 
   // getSvgBuffer();
 
-  function render () {
-    renderCheckboxes();
+  function render (options: { force?: boolean } = {}) {
+    const [canvasWidth, canvasHeight] = getResolution();
+    renderCheckboxes(options.force);
     drawToCanvas([
-      { textObject: vasilyator, position: [1, 1] },
+      { textObject: vasilyator, position: [2, 1] },
+      { textObject: hireMe, position: [2, canvasHeight - 5] },
       // { textObject: iDo, position: [10, 10] },
       // { textObject: doTs, position: [23, 10] },
       // { textObject: nodeLogo, position: [50, 0] },
@@ -316,9 +363,16 @@ function getSvgBuffer(svg: string, size: [number, number]): Promise<Array<1 | 0>
 
   render();
 
-  window.addEventListener('resize', () => {
-    // console.log('resize', data);
-    // render();
+  iDoBlockRoutineRunning = true;
+  iDoBlockRoutine(2, 10);
+
+  const debounceRender = debounce(render, 400);
+
+
+  !isMobileDevice() && window.addEventListener('resize', () => {
+    console.log('resize');
+    getElementsCache = null;
+    debounceRender({ force: true });
     // renderCheckboxes();
     // drawToCanvas(vasyan, [5, 5]);
     // drawToCanvas(bio, [5, 20]);
@@ -333,23 +387,25 @@ function delay (ms: number) {
 function listenEvents() {
   document.getElementById('dev-animation')?.addEventListener('change', async (e) => {
     if ((e.target as HTMLInputElement).checked) {
-      await iDoBlockRoutine(1, 10);
+      iDoBlockRoutineRunning = true;
+    } else {
+      iDoBlockRoutineRunning = false;
     }
+
+    iDoBlockRoutine(2, 10);
   });
 }
 
-
 async function iDoBlockRoutine (x: number = 10, y: number = 10) {
-  console.log('iDoBlockRoutine');
   const items = [doTs, doJs, doAWS, doDocker, doForms];
   let index = 0;
 
-  while (true) {
+  while (iDoBlockRoutineRunning) {
     drawToCanvas([
       { textObject: iDo, position: [x, y] },
       { textObject: items[index], position: [x + 13, y] },
     ]);
-    await delay(1000);
+    await delay(3000);
     drawToCanvas([
       { textObject: { ...items[index], buffer: (items[index].buffer as Buffer).map(() => 0) }, position: [x + 13, y] },
     ]);
@@ -370,14 +426,6 @@ function dumpBufferToConsole(buffer: any[], width: number) {
   console.log(result);
 }
 
-
-export default function Page() {
-  // file = await fs.readFile(process.cwd() + '/public/typescript.svg');
-  // data = file.toString('utf-8');
-  // // main();
-
-  // return <Script src="/lab/page.js" />;
-}
 
 function dumpSelectedElementsInRect($leftTopX: number, $leftTopY: number, $width: number, $height: number) {
   const [canvasWidth, canvasHeight] = getResolution();

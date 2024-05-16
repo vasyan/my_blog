@@ -1,6 +1,7 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 import { getPostById, getAllPostIds } from '../../../../lib/posts';
 import './styles.scss'
+import { Navigation } from '../../components/Navigation'
 
 type PageProps = {
   params: { id: string }
@@ -11,22 +12,25 @@ export default async function Post({ params }: any) {
   const postData = await getPostById(params.id as string) as any;
 
   return (
-    <main className="main-container pb-2">
-      <div className="container">
-        <h1>{postData.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      </div>
-      <div dangerouslySetInnerHTML={{__html: `
-        <script src="https://utteranc.es/client.js"
-          repo="vasyan/my_blog"
-          issue-term="pathname"
-          label="comment"
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
-        </script>
-      `}}/>
-    </main>
+    <>
+      <Navigation path="/blog" />
+      <main className="main-container pb-2">
+        <div className="container">
+          <h1>{postData.title}</h1>
+          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        </div>
+        <div dangerouslySetInnerHTML={{__html: `
+          <script src="https://utteranc.es/client.js"
+            repo="vasyan/my_blog"
+            issue-term="pathname"
+            label="comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+          </script>
+        `}}/>
+      </main>
+    </>
   );
 }
 
