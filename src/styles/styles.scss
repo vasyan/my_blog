@@ -59,6 +59,12 @@ p {
   font-family: var(--font-roboto);
 }
 
+fieldset {
+  input, label {
+    pointer-events: none!important;
+  }
+}
+
 .square {
   position: relative;
   width: 100%;
@@ -165,7 +171,7 @@ p {
     width: 20px;
     height: 20px;
     position: relative;
-    top: -1px;
+    top: -5px;
   }
 }
 
@@ -173,6 +179,16 @@ p {
   padding-top: 80px;
 
   min-height: calc(100vh - 56px);
+}
+
+.homepage-main-container {
+  padding-top: 60px;
+
+  min-height: calc(100vh - 56px);
+
+  @media screen and (max-width: 768px){
+    min-height: calc(100vh - 300px);
+  }
 }
 
 #hero {
@@ -218,14 +234,31 @@ p {
 }
 
 
+input[type="checkbox"] {
+  width: 13px;
+}
+
+.checkbox-display {
+  line-height: 12px;
+}
+
+@media screen and (max-width: 768px){
+  input[type="checkbox"] {
+    width: 8px;
+    height: 8px;
+    margin: 0;
+    border: 0.5px solid $gray-300;
+  }
+  .checkbox-display {
+    line-height: 4px;
+    line-height: 1px;
+  }
+}
+
 .contact-card-item {
   transition: all 0.3s ease-in-out;
   &:hover {
     background-color: $gray-100;
     @extend .shadow;
   }
-}
-
-.checkbox-display {
-  line-height: 12px;
 }

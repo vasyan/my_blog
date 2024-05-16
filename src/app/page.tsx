@@ -1,12 +1,6 @@
-import Image from 'next/image'
 import type { Metadata } from 'next'
-import heroImgSrc from '../../public/hero.svg'
-import dockerImgSrc from '../../public/docker.svg'
-import awsImgSrc from '../../public/aws.svg'
-import nodejsImgSrc from '../../public/nodejs.svg'
-import reactjsImgSrc from '../../public/reactjs.svg'
-import postgresImgSrc from '../../public/postgres.svg'
-import typescriptImgSrc from '../../public/typescript.svg'
+import Script from 'next/script';
+import { Navigation } from './components/Navigation';
 
 export const metadata: Metadata = {
   title: 'Vasily Styazhkin - FullStack Developer',
@@ -27,65 +21,17 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <main className="main-container">
-        <div className="container">
-          <section id="hero" className="section d-flex flex-column flex-lg-row-reverse justify-content-center align-items-center">
-            <div className="img-hero mb-2 col-lg-4">
-              <Image
-                src={heroImgSrc}
-                alt=""
-                priority
-                sizes="100vw"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                }}
-              />
-            </div>
-            <div className="text-md-center text-lg-start hero-text-block">
-              <h1 className="hero-heading mb-2">Vasily Styazhkin</h1>
-              <p className="text-paragraph mb-0">
-                Code since 2013. Email me at <a href="mailto:vasilyator@gmail.com">vasilyator@gmail.com</a>
-              </p>
-            </div>
-          </section>
-        </div>
-        <div className="container">
-          <section id="technologies" className="section pb-4">
-            <h2 className="heading-small pb-2 topics-header text-md-center col-12 col-md-8 mx-auto">Technologies</h2>
-            <div className="row">
-              {[
-                [typescriptImgSrc, 'typescript'],
-                [nodejsImgSrc, 'nodejs'],
-                [postgresImgSrc, 'postgres'],
-                [reactjsImgSrc, 'reactjs'],
-                [dockerImgSrc, 'docker'],
-                [awsImgSrc, 'aws'],
-              ].map(([src, alt]) => (
-                <div className="col-4 col-lg" key={src}>
-                  <Image
-                    src={src}
-                    alt={alt}
-                    title={alt}
-                    priority
-                    sizes="100vw"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                    }}
-                  />
-                </div>
-              ))}
-            </div>
-          </section>
-        </div>
+      <Navigation path="/" />
+      {/* <Script id="poopaloopa">{import('./lab/script.ts')}</Script> */}
+      <main className="draw-here">
       </main>
       <footer className="footer pb-2">
         <hr className="m-0 mb-2"/>
         <div className="d-flex flex-column flex-md-row justify-content-center gap-2 text-color-secondary">
-          Styazhkin Brothers © 2024
+          Styazhkin Vasily © 2024
         </div>
       </footer>
+      <Script src="/checkboxing.js" />
     </>
   )
 }

@@ -1,40 +1,36 @@
-"use client"
-import React, { useRef } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import rssImgSrc from '../../../public/rss.svg'
 
-export const Navigation = () => {
-  const ref = useRef<HTMLDivElement>(null);
+interface NavigationProps {
+  path: string;
+}
 
-  const handleNavigate = () => {
-    const elem = ref.current?.querySelector('.collapse');
-    if (!elem || !elem.classList.contains('show')) return;
-
-    const { Collapse } = require('bootstrap');
-
-    new Collapse(elem).hide(); 
-  }
+export const Navigation = (props: NavigationProps) => {
+  // const pathname = usePathname();
+  const { path: pathname = '' } = props;
 
   return (
-    <nav className="navbar fixed-top navbar-light bottom-shadow bg-body px-3 px-md-4 py-2" ref={ref}>
+    <nav className={`navbar fixed-top navbar-light bg-body px-3 px-md-4 py-2 ${pathname !== '/' ? 'bottom-shadow' : ''}`}>
       <div className="px-0 d-flex w-100">
-        <ul className="d-flex flex-row gap-2 navbar-nav w-100">
-          <li className="nav-item">
-            <a onClick={handleNavigate} className="nav-link" href="/">Home</a>
-          </li>
-          <li className="nav-item">
-            <a onClick={handleNavigate} className="nav-link" href="/blog">Blog</a>
-          </li>
-          <li className="nav-item">
-            <a onClick={handleNavigate} className="nav-link" href="/contact-card-info">Contacts</a>
-          </li>
-          <li className="nav-item">
-            <a onClick={handleNavigate} className="nav-link" href="/projects">Projects</a>
-          </li>
-          <li className="nav-item">
-            <a onClick={handleNavigate} className="nav-link" href="/lab">Lab</a>
-          </li>
-        </ul>
+        <fieldset className="d-flex gap-1 flex-grow-1">
+          <a href="/" className="d-flex align-content-center gap-1">
+            <input type="radio" id="radio-home" name="nav" checked={pathname === '/'} />
+            <label htmlFor="radio-home">Home</label>
+          </a>
+          <a href="/blog" className="d-flex align-content-center gap-1">
+            <input type="radio" id="radio-blog" name="nav" checked={pathname.includes('/blog')}/>
+            <label htmlFor="radio-home">Blog</label>
+          </a>
+          <a href="/contact-card-info" className="d-flex align-content-center gap-1">
+            <input type="radio" id="radio-blog" name="nav" checked={pathname.includes('/contact-card')}/>
+            <label htmlFor="radio-home">Contacts</label>
+          </a>
+          <a href="/projects" className="d-flex align-content-center gap-1">
+            <input type="radio" id="radio-blog" name="nav" checked={pathname.includes('/projects')}/>
+            <label htmlFor="radio-home">Projects</label>
+          </a>
+        </fieldset>
         <a
           className="img-rss"
           href="/rss.xml"

@@ -1,5 +1,4 @@
 import '../styles/styles.scss';
-import { Navigation } from './components/Navigation'
 import { roboto } from '../styles/fonts';
 import type { Metadata } from 'next'
 import Script from 'next/script'
@@ -29,7 +28,6 @@ export default function RootLayout({
         </>
       )}
       <body suppressHydrationWarning>
-        <Navigation />
         {children}
       </body>
     </html>
