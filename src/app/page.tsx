@@ -31,7 +31,7 @@ export default function Home() {
           Styazhkin Vasily © 2024
         </div>
       </footer>
-      <Script src="/checkboxing.js" strategy='worker'/>
+      <Script src="/checkboxing.js" strategy='afterInteractive'/>
     </>
   )
 }
