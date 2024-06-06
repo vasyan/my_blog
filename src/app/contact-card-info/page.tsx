@@ -23,6 +23,11 @@ export default function ContactCardInfo() {
               Telegram: <span className="text-decoration-underline">@vasilyator</span>
             </div>
           </a>
+          <a className="col-12 col-md-6 card border p-2 flex-nowrap shadow-sm contact-card-item" href="https://vasilyator.com/cv.pdf">
+            <div>
+              CV
+            </div>
+          </a>
         </div>
       </div>
     </main>
