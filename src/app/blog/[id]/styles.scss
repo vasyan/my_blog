@@ -6,12 +6,26 @@ h1 {
   margin-bottom: 24px;
 }
 
+code {
+  color: #586e75;
+  background: #eee8d5;
+  padding: 4px 0.6em;
+  border-radius: 4px;
+  font-weight: bolder;
+  font-size: 1em;
+}
+
 pre {
-  background-color: #eee;
-  padding: 0.5em 0;
+  background: #eee8d5;
+  color: #586e75;
+  padding: 0.5em;
 }
 
 img {
   max-width: 300px;
   height: auto;
+
+  .article-chatblade & {
+    max-width: 1000px;
+  }
 }

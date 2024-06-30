@@ -1,13 +1,20 @@
 ---
-title: 'How to use chatblade as ChatGPT cli client with Vim'
-description: "Discover cli power of ChatGPT. Transform your VIM editor with Chatblade—your CLI Swiss Army Knife for ChatGPT, and elevate your coding experience!"
+title: 'How to use chatblade as ChatGPT cli client with Vim or vscode'
+description: "Discover cli power of ChatGPT. Transform your VIM or Vscode with Chatblade—your CLI Swiss Army Knife for ChatGPT, and elevate your coding experience!"
 date: '2023-11-08'
+id: 'chatblade'
 categories:
     - 'chatgpt'
     - 'vim'
+    - 'vscode'
 ---
 
 ![Chatblade CLI with VIM](/chatblade-post-hero.webp "Chatblade cli with VIM")
+
+## UPD 2024-07: VScode vim-mode
+
+It turns out vim-mode in vscode can do the same. Just do the same setup and call command from ex-mode. So easy.
+
 
 Hey everyone! Let’s dive into something super cool today: Chatblade, your very own CLI Swiss Army Knife for dabbling with ChatGPT. Imagine having a nifty tool right in your command line that lets you chat with OpenAI's genius bot. Whether it’s piping in some inputs, tossing in arguments, or a mix of both, Chatblade has got your back. Plus, it’s a champ at saving those common prompt starters for quick access and can even spit out responses in JSON or Markdown.
 
@@ -16,25 +23,29 @@ Before we jump into the fun stuff, make sure you’ve got your OpenAI API key re
 ## Chatbalde with VIM
 
 I use Vim as the default text editing tool. It made me very picky about text editing in others' UI. That's why I was curious about how to apply it to my ChatGPT experience. And here is the receipt! I'm 100% sure it's very far from ideal flow, but at the moment, it's just awesome!
-Here is the list of tools
+Here is the list of tools:
 - [chatblade](https://github.com/npiv/chatblade) - "A CLI Swiss Army Knife for ChatGPT"
 - [dotenv-cli](https://www.npmjs.com/package/dotenv-cli) - for populating variables from .env to the shell ( not required tho, if you like to specify variables right in the shell. Who am I to judge? )
 
 Don't forget to install all of them in any way you prefer.
 
 Create somewhere .env file with your OPENAI_API_KEY
-```bash
+
+```sh
 echo "OPENAI_API_KEY=__PASTE_YOUR_KEY__" >> .env
 ```
 
 Choose a model
-```bash
+
+```sh
 echo "OPENAI_API_MODEL=gpt-4-1106-preview" >> .env
 ```
 
 The real magic is simple. Open Vim, type a prompt, visually select it with `Shift + v`, press `:` and execute
 
-`:'<,'>!dotenv -e .env chatblade`
+```
+:'<,'>!dotenv -e .env chatblade
+```
 
 `'<,'>`  stand for the current selected text
 
