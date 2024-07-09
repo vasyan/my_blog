@@ -11,7 +11,7 @@ export default async function Post({ params }: any) {
   const postData = await getPostById(params.id as string) as any;
 
   return (
-    <main className={`main-container pb-2 article-${postData.id ?? 'generic'}`}>
+    <main className={`main-container pb-2 article-${postData.articleId ?? 'generic'}`}>
       <div className="container">
         <h1>{postData.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />

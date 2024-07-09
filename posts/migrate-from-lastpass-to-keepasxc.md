@@ -2,7 +2,7 @@
 title: "Migration from LastPass to local KeePassXC"
 description: "Nobody want to let you go from their platform"
 date: '2024-07-09'
-id: 'with-wide-img'
+articleId: 'with-wide-img'
 categories:
     - 'system setup'
     - 'privacy'

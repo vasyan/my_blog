@@ -2,7 +2,7 @@
 title: 'How to use chatblade as ChatGPT cli client with Vim or vscode'
 description: "Discover cli power of ChatGPT. Transform your VIM or Vscode with Chatblade—your CLI Swiss Army Knife for ChatGPT, and elevate your coding experience!"
 date: '2023-11-08'
-id: 'with-wide-img'
+articleId: 'with-wide-img'
 categories:
     - 'chatgpt'
     - 'vim'
