@@ -2,9 +2,6 @@
 title: 'How to stop tabs rotation for VSCode.'
 description: "There is no way to disable it by config, but this simple extention solve the problem."
 date: '2024-05-04'
-banner:
-    src: '../public/samsara-of-tabs.webp'
-    alt: 'Wheel of tabs sufferting'
 categories:
     - 'vscode'
 ---

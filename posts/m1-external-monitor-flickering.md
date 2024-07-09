@@ -2,9 +2,6 @@
 title: 'DELL P2723QE Flickering | Life as a Programmer with an M1 Flickering Monitor '
 description: "How to deal with it? Is it permanent? Check my solution for a flickering monitor with an M1 chip."
 date: '2023-08-11'
-banner:
-    src: '../public/m1-monitor.webp'
-    alt: 'm1 monitor flickering'
 categories:
     - 'devices'
 ---
