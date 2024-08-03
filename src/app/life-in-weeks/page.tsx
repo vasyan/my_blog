@@ -27,6 +27,8 @@ const lovelyDays: LovelyDayInLife[] = [
 ];
 
 export default function LifeInWeeks() {
+  let hueShift = 0;
+
   return (
     <>
       <main className="main-container life-in-weeks">
@@ -36,11 +38,13 @@ export default function LifeInWeeks() {
         <div className="container life-in-weeks-container p-0">
           {rows.flat().map((v, index) => {
             const lovelyDay = lovelyDays.find(v => v.week === index);
+            if (lovelyDay) hueShift += 145;
             return (
               <input
                 key={index} type="checkbox" checked={index < weeksPass} readOnly
-                className={lovelyDay ? 'invert' : ''}
+                className={lovelyDay ? 'animate-scale' : ''}
                 title={lovelyDay?.label}
+                style={{filter: `hue-rotate(${hueShift}deg)`}}
               />
             );
           })}
