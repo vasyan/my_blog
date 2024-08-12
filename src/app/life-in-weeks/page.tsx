@@ -38,7 +38,7 @@ export default function LifeInWeeks() {
         <div className="container life-in-weeks-container p-0">
           {rows.flat().map((v, index) => {
             const lovelyDay = lovelyDays.find(v => v.week === index);
-            if (lovelyDay) hueShift += 145;
+            if (lovelyDay) hueShift += 250;
             return (
               <input
                 key={index} type="checkbox" checked={index < weeksPass} readOnly
