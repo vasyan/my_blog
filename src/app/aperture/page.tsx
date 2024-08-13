@@ -49,6 +49,9 @@ export default function AperturePage () {
             );
           })}
         </div>
+        <p className="mt-3">
+          This is a simple demonstration of how aperture and focal length changes affect the sharpness of a scene. Lower values for the diaphragm (f-stop, aperture) result in a shorter focus range, and vice versa.
+        </p>
       </div>
     </main>
   );
