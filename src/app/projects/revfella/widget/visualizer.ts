@@ -1,8 +1,8 @@
-import * as THREEtype from 'three'
+import * as THREE from 'three';
 
 declare global {
   interface Window {
-    THREE: typeof THREEtype;
+    THREE: typeof THREE;
   }
 }
 

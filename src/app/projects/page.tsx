@@ -9,7 +9,7 @@ export default function ProjectsPage() {
             ['revfella', 'Motorcycle exhaust player for RevFella.com (RIP)', 'One day, I was wondering if there is any difference in the sound of aftermarket motorcycle exhausts. Here are the results of hours of audio editing using samples found on the internet ( it turned out - there is not )'],
             ['aperture', 'Photography aperture effect with css blur', 'Photography is cool. But CSS can be artistic also.'],
             ['life-in-weeks', 'My life in weeks', 'I got so much motivation to do stuff by just looking at how much time I did nothing.'],
-          ].map(([id, title, description]) => <ProjectCard id={id} title={title} description={description} />)}
+          ].map(([id, title, description]) => <ProjectCard id={id} title={title} description={description} key={id} />)}
         </div>
       </div>
     </main>
