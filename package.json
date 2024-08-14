@@ -39,6 +39,7 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
+    "@types/three": "^0.167.1",
     "eslint": "^8",
     "eslint-config-next": "13.5.4"
   },
