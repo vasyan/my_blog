@@ -14,6 +14,7 @@
     "@types/node": "^20.8.10",
     "@types/react": "^18.2.34",
     "@types/react-dom": "^18",
+    "@types/three": "^0.167.1",
     "bootstrap": "^5.2.3",
     "encoding": "^0.1.13",
     "feed": "^4.2.2",
@@ -39,7 +40,6 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@types/three": "^0.167.1",
     "eslint": "^8",
     "eslint-config-next": "13.5.4"
   },
