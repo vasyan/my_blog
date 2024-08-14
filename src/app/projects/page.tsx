@@ -29,7 +29,12 @@ function ProjectCard ({ id, title, description }: ProjectCardProps) {
           src={`/thumbs/${id}.jpg`}
           className="card-img-top" alt={`${id} project thumbnail`}
           height={350}
-          width={100}
+          width={300}
+          sizes="100vw"
+          style={{
+            width: '100%',
+            height: 'auto',
+          }}
         />
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
