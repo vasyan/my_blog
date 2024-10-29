@@ -8,6 +8,9 @@ categories:
 
 ![monitor flickeering](/m1-monitor.webp "Monitor flickering with M1 chip")
 
+### The author is available to hire!
+Sorry to interapt the article flow, but for real, I'm looking for a next project to work as web-developer, [contact me](https://vasilyator.com/contact-card-info)
+
 ### In a nutshell:
 
 Poor-quality gray colors can cause your monitor to flicker. However, a specific "good gray" color can stop it. To do this, activate the Self-Diagnostic mode and leave it on the first gray color screen for 10-15 minutes.
@@ -39,18 +42,12 @@ The same problem can happen for Dell monitors, such as the S2722QC, S2721QS, P27
 
 ## How to fix m1 monitor flickering with Firefox
 
-
 I've fixed problems with websites by using Firefox with disabled some of visual effects.
 
 Type `about:config` in the address bar and press enter.
 Search for toolkit.cosmeticAnimations.enabled and set its value to False.
 Search for layout.frame_rate and set its value to 0.
 
-
 ## Is DELL P2723QE a good choice for code?
 
 Overall it is! But if you're doing lot's of front-end it can be painfull.
-
----
-
-Just in case if you like motorcycles here is my fun project - all about exhaust sound. It's 100% M1 external display flickering safe! Visit [https://revfella.com](https://revfella.com/?ref=m1){:rel="nofollow" target="_blank"}
