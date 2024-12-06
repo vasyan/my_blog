@@ -1,12 +1,7 @@
 ---
 title: 'Fixing ArtemisMQ Docker Issues on M4 MacBook: Solving the hsdis Bug'
-description: 'Encountered a strange crash running `artemisMQ` in Docker on the new M4 MacBook? This post explores a mysterious hsdis library bug, failed multi-platform builds, and the surprising solution using Colima to build an amd64 container. Save time with this quick fix!
-'
-date: '2023-12-05'
-banner:
-    src: ''
-    alt: ''
-    caption: ''
+description: 'Encountered a strange crash running artemisMQ in Docker on the new M4 MacBook? This post explores a mysterious hsdis library bug, failed multi-platform builds, and the surprising solution using Colima to build an amd64 container. Save time with this quick fix!'
+date: '2024-12-05'
 categories:
     - 'docker'
     - 'm4'
