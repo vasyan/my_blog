@@ -83,7 +83,7 @@ export default function Home() {
       <footer className="footer pb-2">
         <hr className="m-0 mb-2"/>
         <div className="d-flex flex-column flex-md-row justify-content-center gap-2 text-color-secondary">
-          Styazhkin Brothers © 2024
+          Styazhkin <a href="https://www.nesusvet.com/?lang=en&ref=vasyan">Brothers</a> © 2025
         </div>
       </footer>
     </>
