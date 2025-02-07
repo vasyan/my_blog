@@ -4,7 +4,7 @@ import { generateRssFeed } from '../../../lib/generate-rss-feed'
 
 export const metadata: Metadata = {
   title: 'Vasily Styazhkin blog',
-  description: "My toughts about technologies",
+  description: "My toughts about technologies and more",
 }
 
 
@@ -16,14 +16,20 @@ export default function Posts(props: any) {
     <main className="main-container">
       <div className="container">
         <ul className="">
-          {allPostsData?.map(({ id, date, title, description }: any) => (
-            <li className="" key={id}>
-              <a className="heading-sub text-decoration-underline" href={`/blog/${id}`}>{title}</a>
-              <p className="text-paragraph-small">{description}</p>
-              <p className="text-paragraph-small">{date}</p>
-              <hr />
-            </li>
-          ))}
+          {allPostsData?.map((item: any) => {
+            const { id, date, title, description, categories } = item
+            return (
+              <li className="" key={id}>
+                <a className="heading-sub text-decoration-underline" href={`/blog/${id}`}>{title}</a>
+                <p className="text-paragraph-small">{description}</p>
+                {categories ? (
+                  <p className="text-paragraph-small">{categories.map(v => `#${v}`).join(' ')}</p>
+                ) : null}
+                <p className="text-paragraph-small">{date}</p>
+                <hr />
+              </li>
+            )
+          })}
         </ul>
       </div>
     </main>
