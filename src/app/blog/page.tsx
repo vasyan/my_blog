@@ -23,7 +23,7 @@ export default function Posts(props: any) {
                 <a className="heading-sub text-decoration-underline" href={`/blog/${id}`}>{title}</a>
                 <p className="text-paragraph-small">{description}</p>
                 {categories ? (
-                  <p className="text-paragraph-small">{categories.map(v => `#${v}`).join(' ')}</p>
+                  <p className="text-paragraph-small">{categories.map((v: any) => `#${v}`).join(' ')}</p>
                 ) : null}
                 <p className="text-paragraph-small">{date}</p>
                 <hr />
