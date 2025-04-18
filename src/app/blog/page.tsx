@@ -4,14 +4,14 @@ import { generateRssFeed } from '../../../lib/generate-rss-feed'
 
 export const metadata: Metadata = {
   title: 'Vasily Styazhkin blog',
-  description: "My toughts about technologies and more",
+  description: "My thoughts about technologies and more",
 }
 
 
 export default function Posts(props: any) {
   const allPostsData = getSortedPostsData();
   generateRssFeed();
-  
+
   return (
     <main className="main-container">
       <div className="container">
