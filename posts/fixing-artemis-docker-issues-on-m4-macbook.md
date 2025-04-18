@@ -8,6 +8,10 @@ categories:
     - 'macos'
 ---
 
+### Update 2025-04-18
+The problem is caused by outdated Docker. Simply update it and you're good. Version 28.0.1 works fine.
+
+
 I got a new M4 chipset MacBook last week and instantly encountered a strange bug inside a Docker container running `artemisMQ`. The issue was related to a mysterious problem with the `hsdis` library. There isn't much information available online about this new chipset, so I hope this note will save someone some time.
 
 ```sh
