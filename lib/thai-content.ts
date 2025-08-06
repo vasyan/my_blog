@@ -1,10 +1,8 @@
-// Base URL for the Thai content API
-// const API_BASE_URL = 'http://localhost:8000/web';
-const API_BASE_URL = process.env.NEXT_PUBLIC_THAI_API_BASE_URL;
+const API_BASE_URL = process.env.NEXT_PUBLIC_THAI_API_BASE_URL ?? 'http://localhost:8000/web';
 
 export async function getAllThaiIds() {
   const response = await fetch(`${API_BASE_URL}/thai/ids`, {
-    next: { revalidate: 3600 }, // Revalidate every hour
+    next: { revalidate: 3600 },
   });
   
   if (!response.ok) {
@@ -47,7 +45,7 @@ interface PaginatedThaiResponse {
 
 export async function getAllThaiContent() {
   const response = await fetch(`${API_BASE_URL}/thai/list`, {
-    next: { revalidate: 3600 }, // Revalidate every hour
+    next: { revalidate: 3600 },
   });
 
 
@@ -90,7 +88,7 @@ export async function getThaiContentById(id: string): Promise<ThaiContentByIdDTO
 
 export async function getThaiContentByPage(page: number, pageSize: number = 25): Promise<PaginatedThaiResponse> {
   const response = await fetch(`${API_BASE_URL}/thai/list?page=${page}&page_size=${pageSize}`, {
-    next: { revalidate: 3600 }, // Revalidate every hour
+    next: { revalidate: 3600 },
   });
   
   if (!response.ok) {

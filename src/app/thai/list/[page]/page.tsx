@@ -34,7 +34,7 @@ export default async function ThaiListPage({ params }: PageProps) {
           <ul className="list-unstyled">
             {content.map((item) => (
               <li key={item.id} className="mb-4">
-                <Link
+                <a
                   className="card border flex-nowrap shadow-sm project-card-item"
                   href={`/thai/${item.id}`}
                 >
@@ -77,7 +77,7 @@ export default async function ThaiListPage({ params }: PageProps) {
                       </div>
                     )} */}
                   </div>
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
