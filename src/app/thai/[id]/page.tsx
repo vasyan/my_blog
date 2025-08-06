@@ -3,6 +3,7 @@ import { getThaiContentById, getAllThaiIds } from '../../../../lib/thai-content'
 import { notFound } from 'next/navigation'
 import { AudioPlayer } from '../../components/AudioPlayer'
 import './styles.scss'
+import Link from 'next/link'
 
 type PageProps = {
   params: { id: string }
@@ -15,9 +16,15 @@ export default async function ThaiPage({ params }: PageProps) {
     const thaiData = await getThaiContentById(params.id);
     
     return (
-      <main className="main-container pb-2">
-        <div className="container">
+      <main className="main-container d-flex align-items-center">
+        <div className="container px-2">
+        <div className="container px-2">
+          <nav>
+            <Link href="/thai/list/1">Back to list</Link>
+          </nav>
+        </div>
           <h1>{thaiData.front}</h1>
+          <h3 className="mb-4">{thaiData.back}</h3>
           
           <div className="thai-content">
             {/* <div className="thai-script">

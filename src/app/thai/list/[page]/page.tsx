@@ -20,8 +20,8 @@ export default async function ThaiListPage({ params }: PageProps) {
     const { content, pagination } = data
     
     return (
-      <main className="main-container">
-        <div className="container">
+      <main className="main-container d-flex align-items-center">
+        <div className="container px-2">
           <div className="d-flex justify-content-between align-items-center mb-4">
             <h1>Thai Content - Page {pageNumber}</h1>
             <div className="pagination-info">
@@ -34,18 +34,13 @@ export default async function ThaiListPage({ params }: PageProps) {
           <ul className="list-unstyled">
             {content.map((item) => (
               <li key={item.id} className="mb-4">
-                <a
-                  className="card border flex-nowrap shadow-sm project-card-item"
+                <Link 
                   href={`/thai/${item.id}`}
+                  className="card border flex-nowrap shadow-sm project-card-item text-decoration-none"
                 >
                   <div className="card-body">
                     <h5 className="card-title">
-                      <Link 
-                        href={`/thai/${item.id}`}
-                        className="text-decoration-none"
-                      >
-                        {item.title}
-                      </Link>
+                      {item.title}
                     </h5>
                     
                     <div className="row">
@@ -77,7 +72,7 @@ export default async function ThaiListPage({ params }: PageProps) {
                       </div>
                     )} */}
                   </div>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
