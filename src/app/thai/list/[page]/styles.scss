@@ -1,0 +1,22 @@
+.main-container {
+  .card {
+    transition: box-shadow 0.2s ease-in-out;
+    
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .pagination-info {
+    font-size: 0.9rem;
+  }
+  
+  .badge {
+    font-size: 0.75rem;
+  }
+  
+  nav[aria-label*="pagination"] {
+    border-top: 1px solid #dee2e6;
+    padding-top: 1rem;
+  }
+}
