@@ -1,4 +1,4 @@
-@import "../../../styles/variables.scss";
+@import "../../../styles/styles.scss";
 
 // Thai content specific styles
 .main-container {
@@ -10,13 +10,28 @@
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     color: #1a1a1a;
     text-align: center;
     
     @media (max-width: 768px) {
       font-size: 2rem;
       margin-bottom: 2rem;
+    }
+  }
+
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    // margin-bottom: 1rem;
+    color: #1a1a1a;
+    text-align: center;
+    
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
     }
   }
 }
