@@ -6,6 +6,7 @@ export default function ProjectsPage() {
       <div className="container px-2">
         <div className="row justify-content-center">
           {[
+            ['thai-ed', 'Thai learning app', 'My overingineered way to lear Thai language with repsonalized examples.', '/thai'],
             ['cathouse', 'Our offline feline heaven', `Experience Bangkok differently at Cathouse BKK by Nicha – where seven friendly cats make your stay unforgettable. Our cozy homestay combines Thai hospitality with purr-fect companionship!`, 'https://cathousebkk.com?ref=vasyan'],
             ['revfella', 'Motorcycle exhaust player for RevFella.com (RIP)', 'One day, I was wondering if there is any difference in the sound of aftermarket motorcycle exhausts. Here are the results of hours of audio editing using samples found on the internet ( it turned out - there is not )'],
             ['aperture', 'Photography aperture effect with css blur', 'Photography is cool. But CSS can be artistic also.'],

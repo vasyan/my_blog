@@ -4,6 +4,24 @@
   --gray-600: #747474;
   --gray-300: #BFBFBF;
   --bs-border-color: #BFBFBF;
+  
+  // Typography scale
+  --text-tiny: 0.75rem;
+  --text-small: 0.875rem;
+  --text-medium: 1rem;
+  --text-large: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  
+  // Line heights
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+  
+  // Transitions
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease;
 }
 
 .btn {
