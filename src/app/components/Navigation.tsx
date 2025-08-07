@@ -20,19 +20,22 @@ export const Navigation = () => {
       <div className="px-0 d-flex w-100">
         <ul className="d-flex flex-row gap-2 navbar-nav w-100">
           <li className="nav-item">
-            <a onClick={handleNavigate} className="nav-link" href="/">Home</a>
+            <a onClick={handleNavigate} className="nav-link hover-underline" href="/">Home</a>
           </li>
           <li className="nav-item">
-            <a onClick={handleNavigate} className="nav-link" href="/blog">Blog</a>
+            <a onClick={handleNavigate} className="nav-link hover-underline" href="/blog">Blog</a>
           </li>
           <li className="nav-item">
-            <a onClick={handleNavigate} className="nav-link" href="/contact-card-info">Contacts</a>
+            <a onClick={handleNavigate} className="nav-link hover-underline" href="/contact-card-info">Contacts</a>
           </li>
           <li className="nav-item">
-            <a onClick={handleNavigate} className="nav-link" href="/projects">Projects</a>
+            <a onClick={handleNavigate} className="nav-link hover-underline" href="/projects">Projects</a>
           </li>
           <li className="nav-item">
-            <a onClick={handleNavigate} className="nav-link" href="/lab">Lab</a>
+            <a onClick={handleNavigate} className="nav-link hover-underline" href="/lab">Lab</a>
+          </li>
+          <li className="nav-item">
+            <a onClick={handleNavigate} className="nav-link hover-underline" href="/reviews">Learn Thai</a>
           </li>
         </ul>
         <a

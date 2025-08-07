@@ -281,3 +281,9 @@ input[type="checkbox"] {
     @extend .shadow;
   }
 }
+
+.hover-underline {
+  &:hover {
+    text-decoration: underline;
+  }
+}
