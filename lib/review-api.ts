@@ -25,12 +25,13 @@ export type ReviewScore = 0 | 1 | 2 // Very Bad | Not Good | Good
 export async function getNextDueCard(userId: string): Promise<DueCard | null> {
 	const supabase = createClient()
 
-	// First, try to get a due review
+	// First, try to get a due review (excluding buried cards)
 	const { data: dueReviews } = await supabase
 		.from('user_card_reviews')
 		.select('*')
 		.eq('user_id', userId)
 		.lte('next_review', new Date().toISOString())
+		.not('tags', 'cs', '["buried"]')  // Exclude cards with buried tag
 		.order('next_review', { ascending: true })
 		.limit(1)
 
@@ -51,7 +52,7 @@ export async function getNextDueCard(userId: string): Promise<DueCard | null> {
 	}
 
 	// If no due reviews, get a new unreviewed card
-	// We need to get all reviewed card IDs first, then find one that's not in that list
+	// We need to get all reviewed card IDs first (including buried), then find one that's not in that list
 	const { data: reviewedCards } = await supabase
 		.from('user_card_reviews')
 		.select('thai_content_id')
