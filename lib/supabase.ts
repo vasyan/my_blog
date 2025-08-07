@@ -22,6 +22,8 @@ export type Database = {
 					state: string
 					elapsed_days: number
 					scheduled_days: number
+					// Card management
+					tags?: any // JSONB array
 				}
 				Insert: {
 					id?: string
@@ -41,6 +43,8 @@ export type Database = {
 					state?: string
 					elapsed_days?: number
 					scheduled_days?: number
+					// Card management
+					tags?: any // JSONB array
 				}
 				Update: {
 					id?: string
@@ -60,6 +64,8 @@ export type Database = {
 					state?: string
 					elapsed_days?: number
 					scheduled_days?: number
+					// Card management
+					tags?: any // JSONB array
 				}
 			}
 		}
