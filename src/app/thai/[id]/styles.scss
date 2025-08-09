@@ -195,57 +195,9 @@
   }
 }
 
-// Dark mode support (if needed in future)
-@media (prefers-color-scheme: dark) {
-  .thai-content > div {
-    background: #1f2937;
-    border-color: #374151;
-    color: #f9fafb;
-  }
-  
-  .thai-script .thai-text {
-    background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
-    border-color: #6b7280;
-    color: #f3f4f6 !important;
-  }
-  
-  .usage-examples {
-    background: #1f2937 !important;
-    border-color: #374151 !important;
-    
-    // h3 {
-    //   color: #60a5fa !important;
-    // }
-  }
-}
-
 // Usage examples specific styles
 .usage-examples {
-  // background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
-  // border-color: #0ea5e9 !important;
-  
-  // h3 {
-  //   // color: #0284c7 !important;
-  // }
-  
   .audio-example {
     width: 20rem;
-    // margin: 0.75rem 0;
-    // display: flex;
-    // justify-content: center;
-    
-    // &:first-child {
-    //   margin-top: 0.5rem;
-    // }
-    
-    // &:last-child {
-    //   margin-bottom: 0;
-    // }
   }
-  
-  // @media (max-width: 768px) {
-    // .audio-example {
-    //   margin: 0.5rem 0;
-    // }
-  // }
 } 
