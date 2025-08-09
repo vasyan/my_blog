@@ -14,7 +14,7 @@ export default async function ThaiPage({ params }: PageProps) {
     // Ensure ID is properly passed as expected by the API
     const thaiData = await getThaiContentById(params.id);
     const thaiContentId = parseInt(params.id, 10);
-    
+
     return <ThaiContentClient thaiData={thaiData} thaiContentId={thaiContentId} />;
   } catch (error) {
     console.error('Error fetching Thai content:', error);
