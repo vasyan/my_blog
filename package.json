@@ -3,13 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "next dev",
     "start:dev": "next dev -p 8080",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "test:supabase": "node scripts/check-supabase-connection.js",
+    "setup:test-cards": "node scripts/populate-test-cards.js"
   },
   "dependencies": {
+    "@supabase/auth-ui-react": "^0.4.7",
+    "@supabase/auth-ui-shared": "^0.1.8",
+    "@supabase/ssr": "^0.6.1",
+    "@supabase/supabase-js": "^2.53.0",
     "@types/bootstrap": "^5.2.6",
     "@types/node": "^20.8.10",
     "@types/react": "^18.2.34",
@@ -34,12 +41,14 @@
     "remark-rehype": "10.0.0",
     "sass": "^1.69.1",
     "to-vfile": "^8.0.0",
+    "ts-fsrs": "^5.2.1",
     "typescript": "^5.2.2",
     "unified": "^7.0.4",
     "unified-engine": "^11.2.0",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
+    "dotenv": "^17.2.1",
     "eslint": "^8",
     "eslint-config-next": "13.5.4"
   },
