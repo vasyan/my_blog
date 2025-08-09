@@ -16,7 +16,7 @@ export function ThaiContentClient({ thaiData, thaiContentId }: ThaiContentClient
 
   const targetItemFragment = thaiData.examples.find((fragment: any) => fragment.fragment_type === 'target_learning_item')
 
-  // console.log('targetItemFragment', targetItemFragment)
+  console.log('targetItemFragment', targetItemFragment)
 
   return (
     <ThaiPageWrapper thaiContentId={thaiContentId}>
@@ -28,10 +28,10 @@ export function ThaiContentClient({ thaiData, thaiContentId }: ThaiContentClient
             </nav>
           )}
           <h1 className="mb-2">{thaiData.front}</h1>
-          {targetItemFragment && (
+          {targetItemFragment && targetItemFragment.assets.length > 0 && (
             <div key={targetItemFragment.id} className="audio-example mb-2 d-flex justify-content-center">
               <AudioPlayer 
-                base64Data={targetItemFragment.asset_data}
+                base64Data={targetItemFragment.assets[0].asset_data}
               />
             </div>
           )}
