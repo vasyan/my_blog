@@ -68,11 +68,11 @@ export function ThaiListClient({ content, pagination, pageNumber }: ThaiListClie
 
       <div>
         <div className="container px-2">
-          <div className="d-flex justify-content-between align-items-center mb-4">
-            <h1>Thai Content - Page {pageNumber}</h1>
+          <div className="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-4">
+            <h1>Thai Content: <span className="text-nowrap">Page {pageNumber}</span></h1>
             <div className="pagination-info">
               <span className="text-muted">
-                Showing {content.length} items (Page {pagination.current_page})
+                Showing {content.length} items
               </span>
             </div>
           </div>
@@ -112,20 +112,20 @@ export function ThaiListClient({ content, pagination, pageNumber }: ThaiListClie
                 {pageNumber > 1 && (
                   <Link 
                     href={`/thai/list/${pageNumber - 1}`}
-                    className="btn btn-outline-primary"
+                    className="btn btn-link"
                   >
                     ← Previous
                   </Link>
                 )}
               </div>
               
-              <span className="text-muted">Page {pageNumber}</span>
+              <div className="text-muted">Page {pageNumber}</div>
               
               <div>
                 {pagination.has_next && (
                   <Link 
                     href={`/thai/list/${pageNumber + 1}`}
-                    className="btn btn-outline-primary"
+                    className="btn btn-link"
                   >
                     Next →
                   </Link>

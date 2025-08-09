@@ -66,7 +66,6 @@
     h3 {
       font-size: 1.25rem;
       font-weight: 600;
-      color: $primary;
       margin-bottom: 1rem;
       padding-bottom: 0.5rem;
       // border-bottom: 2px solid #f3f4f6;
@@ -81,7 +80,7 @@
     p {
       margin: 0;
       line-height: 1.8;
-      color: #374151;
+      // color: #374151;
       font-size: 1rem;
       
       @media (max-width: 768px) {
@@ -202,15 +201,6 @@
     background: #1f2937;
     border-color: #374151;
     color: #f9fafb;
-    
-    h3 {
-      color: #60a5fa;
-      // border-bottom-color: #374151;
-    }
-    
-    p {
-      color: #d1d5db;
-    }
   }
   
   .thai-script .thai-text {

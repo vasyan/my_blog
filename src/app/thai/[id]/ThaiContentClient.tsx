@@ -3,6 +3,7 @@
 import { ThaiPageWrapper } from '../../components/ThaiPageWrapper'
 import { AudioPlayer } from '../../components/AudioPlayer'
 import Link from 'next/link'
+import { useMemo } from 'react'
 
 interface ThaiContentClientProps {
   thaiData: any
@@ -10,15 +11,18 @@ interface ThaiContentClientProps {
 }
 
 export function ThaiContentClient({ thaiData, thaiContentId }: ThaiContentClientProps) {
+  const sessionStorage = typeof window !== 'undefined' ? window.sessionStorage : null
+  const isReviewMode = useMemo(() => sessionStorage?.getItem('thai-review-mode') === 'true', [sessionStorage])
+
   return (
     <ThaiPageWrapper thaiContentId={thaiContentId}>
-      <main className="main-container d-flex align-items-center">
-        <div className="container px-2">
-          <div className="container px-2">
-            <nav>
-              <Link href="/thai/list/1">Back to list</Link>
+      <main className=" d-md-flex d-sm-block align-items-center py-sm-1 py-md-2">
+        <div className="container px-md-2 px-sm-0">
+          {!isReviewMode && (
+            <nav className="mb-2">
+              <Link href="/thai/list/1">Back</Link>
             </nav>
-          </div>
+          )}
           <h1>{thaiData.front}</h1>
           <h3 className="mb-4 hiddable-content">{thaiData.back}</h3>
           
@@ -31,10 +35,8 @@ export function ThaiContentClient({ thaiData, thaiContentId }: ThaiContentClient
 
                   return (
                     <div key={example.id}>
-                      <div className="d-flex gap-2 align-items-center">
-                        <div>
-                          <h3 className="mb-0">{example.native_text}</h3>
-                        </div>
+                      <div className="d-flex gap-2 align-items-center mb-2">
+                        <h3 className="mb-0 text-nowrap" style={{ fontSize: '1.2rem' }}>{example.native_text}</h3>
                         {topAsset && (
                           <div key={topAsset.id} className="audio-example">
                             <AudioPlayer 

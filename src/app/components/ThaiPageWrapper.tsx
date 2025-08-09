@@ -63,30 +63,27 @@ export function ThaiPageWrapper({ children, thaiContentId }: ThaiPageWrapperProp
   }
 
   return (
-    <main className="main-container d-flex align-items-center">
+    <main className="main-container">
       <div className="container px-2">
-      {/* Auth controls header */}
-      <div className="bg-light border-bottom py-2 mb-3">
-        <div className="container">
-          <div className="d-flex justify-content-between align-items-center">
-            <div className="d-flex align-items-center gap-3">
-              <span className="fw-bold">Thai Learning App</span>
-              {/* {reviewMode && (
-                <span className="badge bg-primary">Review Mode Active</span>
-              )} */}
+        {/* Auth controls header */}
+        <div className="bg-light border-bottom py-2 mb-3">
+          <div className="container">
+            <div className="d-flex justify-content-between align-items-center">
+              {/* <div className="d-flex align-items-center gap-3">
+                <span className="fw-bold">Thai Learning App</span>
+              </div> */}
+              <ThaiAuthControls onReviewModeChange={handleReviewModeChange} />
             </div>
-            <ThaiAuthControls onReviewModeChange={handleReviewModeChange} />
           </div>
         </div>
-      </div>
 
-      {/* Main content */}
-      {children}
+        {/* Main content */}
+        {children}
 
-      {/* Review widget - only show when in review mode */}
-      {reviewMode && user && (
-        <ReviewWidget userId={user.id} thaiContentId={thaiContentId} />
-      )}
+        {/* Review widget - only show when in review mode */}
+        {reviewMode && user && (
+          <ReviewWidget userId={user.id} thaiContentId={thaiContentId} />
+        )}
       </div>
     </main>
   )
