@@ -59,8 +59,8 @@ export function ThaiListClient({ content, pagination, pageNumber }: ThaiListClie
       {/* Auth controls header */}
       <div className="bg-light border-bottom py-2 mb-3">
         <div className="container">
-          <div className="d-flex justify-content-between align-items-center">
-            <span className="fw-bold">Thai Learning App</span>
+          <div className="d-flex justify-content-between align-items-center gap-2">
+            <span className="fw-bold text-nowrap">Thai Learning App</span>
             <ThaiAuthControls onReviewModeChange={handleReviewModeChange} />
           </div>
         </div>

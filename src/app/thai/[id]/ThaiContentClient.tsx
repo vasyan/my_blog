@@ -15,8 +15,7 @@ export function ThaiContentClient({ thaiData, thaiContentId }: ThaiContentClient
   const isReviewMode = useMemo(() => sessionStorage?.getItem('thai-review-mode') === 'true', [sessionStorage])
 
   const targetItemFragment = thaiData.examples.find((fragment: any) => fragment.fragment_type === 'target_learning_item')
-
-  console.log('targetItemFragment', targetItemFragment)
+  const examples = thaiData.examples.filter((fragment: any) => fragment.id !== targetItemFragment.id)
 
   return (
     <ThaiPageWrapper thaiContentId={thaiContentId}>
@@ -38,10 +37,10 @@ export function ThaiContentClient({ thaiData, thaiContentId }: ThaiContentClient
           <h3 className="mb-4 hiddable-content">{thaiData.back}</h3>
           
           <div className="thai-content">
-            {thaiData.examples.length > 0 && (
+            {examples.length > 0 && (
               <div className="usage-examples hiddable-content">
                 <h3>Usage Examples:</h3>
-                {thaiData.examples.map((example: any) => {
+                {examples.map((example: any) => {
                   const topAsset = example.assets?.[0];
 
                   return (
