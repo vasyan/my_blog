@@ -237,7 +237,7 @@ export function ReviewWidget({ userId, thaiContentId }: ReviewWidgetProps) {
         )}
 
         {currentCard && currentCard.review_id && (
-          <div className="alert alert-info mb-3 py-2">
+          <div className="alert alert-info mb-3 py-2 d-none d-sm-block">
             <small>
               Reviews: {currentCard.review_count} | 
               Difficulty: {currentCard.difficulty ? currentCard.difficulty.toFixed(1) : 'N/A'} | 
@@ -252,15 +252,14 @@ export function ReviewWidget({ userId, thaiContentId }: ReviewWidgetProps) {
         <div>
           {!isFlipped ? (
             <>
-              <h6 className="mb-3">Ready to test your knowledge?</h6>
               <button
                 onClick={() => setIsFlipped(true)}
                 className="btn btn-primary btn-lg w-100"
                 disabled={submitting}
               >
-                <span className="fw-bold">🔄 Flip to reveal</span>
+                <span className="fw-bold">🔄 Reveal</span>
               </button>
-              <small className="text-muted d-block mt-2 text-center">
+              <small className="text-muted d-block mt-2 text-center d-none d-sm-block">
                 The translation and examples are hidden
               </small>
             </>

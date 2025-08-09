@@ -35,8 +35,12 @@ export async function generateMetadata(
     const thaiData = await getThaiContentById(id);
     
     return {
-      title: thaiData.front,
-      description: thaiData.back
+      title: `Thai word "${thaiData.front}" with examples`,
+      description: `Learn Thai word "${thaiData.front}" with examples`,
+      openGraph: {
+        title: `Thai word "${thaiData.front}" with examples`,
+        description: `Learn Thai word "${thaiData.front}" with examples`,
+      }
     };
   } catch (error) {
     return {
