@@ -34,9 +34,9 @@ export const Navigation = () => {
           <li className="nav-item d-none d-sm-block">
             <a onClick={handleNavigate} className="nav-link hover-underline" href="/lab">Lab</a>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <a onClick={handleNavigate} className="nav-link hover-underline" href="/reviews"><span className="d-none d-sm-inline">Learn </span>Thai</a>
-          </li>
+          </li> */}
         </ul>
         <a
           className="img-rss"

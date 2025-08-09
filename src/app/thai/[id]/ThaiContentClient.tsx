@@ -14,6 +14,10 @@ export function ThaiContentClient({ thaiData, thaiContentId }: ThaiContentClient
   const sessionStorage = typeof window !== 'undefined' ? window.sessionStorage : null
   const isReviewMode = useMemo(() => sessionStorage?.getItem('thai-review-mode') === 'true', [sessionStorage])
 
+  const targetItemFragment = thaiData.examples.find((fragment: any) => fragment.fragment_type === 'target_learning_item')
+
+  // console.log('targetItemFragment', targetItemFragment)
+
   return (
     <ThaiPageWrapper thaiContentId={thaiContentId}>
       <main className=" d-md-flex d-sm-block align-items-center py-sm-1 py-md-2">
@@ -23,7 +27,14 @@ export function ThaiContentClient({ thaiData, thaiContentId }: ThaiContentClient
               <Link href="/thai/list/1">Back</Link>
             </nav>
           )}
-          <h1>{thaiData.front}</h1>
+          <h1 className="mb-2">{thaiData.front}</h1>
+          {targetItemFragment && (
+            <div key={targetItemFragment.id} className="audio-example mb-2 d-flex justify-content-center">
+              <AudioPlayer 
+                base64Data={targetItemFragment.asset_data}
+              />
+            </div>
+          )}
           <h3 className="mb-4 hiddable-content">{thaiData.back}</h3>
           
           <div className="thai-content">
