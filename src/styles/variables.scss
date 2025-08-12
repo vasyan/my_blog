@@ -60,7 +60,7 @@ $navbar-light-toggler-icon-bg: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaH
 @import "bootstrap/scss/grid";
 // @import "bootstrap/scss/tables";
 // @import "bootstrap/scss/forms";
-// @import "bootstrap/scss/buttons";
+@import "bootstrap/scss/buttons";
 // @import "bootstrap/scss/transitions";
 // @import "bootstrap/scss/dropdown";
 // @import "bootstrap/scss/button-group";
@@ -89,4 +89,4 @@ $navbar-light-toggler-icon-bg: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaH
 
 // Utilities
 @import "bootstrap/scss/utilities/api";
-// @import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
