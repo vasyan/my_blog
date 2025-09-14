@@ -44,7 +44,7 @@ export function ThaiContentClient({ thaiData, thaiContentId }: ThaiContentClient
                   const topAsset = example.assets?.[0];
 
                   return (
-                    <div key={example.id}>
+                    <div key={example.id} data-fragment-id={example.id}>
                       <div className="d-flex gap-2 align-items-center mb-2">
                         <h3 className="mb-0 text-nowrap" style={{ fontSize: '1.2rem' }}>{example.native_text}</h3>
                         {topAsset && (

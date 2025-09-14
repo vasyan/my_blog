@@ -50,3 +50,14 @@ function ProjectCard ({ id, title, description, url }: ProjectCardProps) {
     </div>
   )
 }
+
+export async function generateMetadata() {
+  return {
+    title: 'Vasyan\'s projects',
+    description: 'Projects I have worked on',
+    openGraph: {
+      title: 'Vasyan\'s projects',
+      description: 'Projects I have worked on',
+    }
+  }
+}

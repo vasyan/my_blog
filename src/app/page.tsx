@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import heroImgSrc from '../../public/hero.svg'
 import dockerImgSrc from '../../public/docker.svg'
 import awsImgSrc from '../../public/aws.svg'
+import golangImgSrc from '../../public/golang.svg'
+import pythonImgSrc from '../../public/python.svg'
 import nodejsImgSrc from '../../public/nodejs.svg'
 import reactjsImgSrc from '../../public/reactjs.svg'
 import postgresImgSrc from '../../public/postgres.svg'
@@ -48,7 +50,7 @@ export default function Home() {
                 Code since 2013. Email me at <a href="mailto:vasilyator@gmail.com">vasilyator@gmail.com</a>
               </p>
 
-              <p className="mb-0 text-nowrap btn btn-warning">
+              <p className="mb-0 text-nowrap btn btn-warning d-none">
                 Check out my <a href="/thai/list/1">Thai App</a>
               </p>
             </div>
@@ -60,13 +62,14 @@ export default function Home() {
             <div className="row">
               {[
                 [typescriptImgSrc, 'typescript'],
-                [nodejsImgSrc, 'nodejs'],
+                [pythonImgSrc, 'python'],
+                [golangImgSrc, 'golang'],
                 [postgresImgSrc, 'postgres'],
                 [reactjsImgSrc, 'reactjs'],
                 [dockerImgSrc, 'docker'],
                 [awsImgSrc, 'aws'],
               ].map(([src, alt]) => (
-                <div className="col-4 col-lg" key={src}>
+                <div className="col-4 col-lg filter-black d-flex align-items-center" key={src}>
                   <Image
                     src={src}
                     alt={alt}

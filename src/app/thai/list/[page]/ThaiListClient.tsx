@@ -57,7 +57,7 @@ export function ThaiListClient({ content, pagination, pageNumber }: ThaiListClie
     <main className="main-container d-flex align-items-center">
       <div className="container px-2">
       {/* Auth controls header */}
-      <div className="bg-light border-bottom py-2 mb-3">
+      <div className="bg-light border-bottom py-2 mb-3 d-none">
         <div className="container">
           <div className="d-flex justify-content-between align-items-center gap-2">
             <span className="fw-bold text-nowrap">Thai Learning App</span>

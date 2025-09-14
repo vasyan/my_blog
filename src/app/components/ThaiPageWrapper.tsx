@@ -66,16 +66,16 @@ export function ThaiPageWrapper({ children, thaiContentId }: ThaiPageWrapperProp
     <main className="main-container">
       <div className="container px-2">
         {/* Auth controls header */}
-        <div className="bg-light border-bottom py-2 mb-3">
+        {/* <div className="bg-light border-bottom py-2 mb-3">
           <div className="container">
             <div className="d-flex justify-content-between align-items-center">
-              {/* <div className="d-flex align-items-center gap-3">
+              <div className="d-flex align-items-center gap-3">
                 <span className="fw-bold">Thai Learning App</span>
-              </div> */}
+              </div>
               <ThaiAuthControls onReviewModeChange={handleReviewModeChange} />
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Main content */}
         {children}
