@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 
 export default function Posts(props: any) {
   const allPostsData = getSortedPostsData();
+  console.log(allPostsData)
   generateRssFeed();
 
   return (

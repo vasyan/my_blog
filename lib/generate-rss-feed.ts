@@ -40,7 +40,9 @@ export function generateRssFeed() {
     });
   });
 
-  fs.writeFileSync('./public/rss.xml', feed.rss2());
-  fs.writeFileSync('./public/rss.json', feed.json1());
-  fs.writeFileSync('./public/atom.xml', feed.atom1());
+  if (process.env.NEXT_PUBLIC_BUILD_ENV === 'production') {
+    fs.writeFileSync('./public/rss.xml', feed.rss2());
+    fs.writeFileSync('./public/rss.json', feed.json1());
+    fs.writeFileSync('./public/atom.xml', feed.atom1());
+  }
 }
