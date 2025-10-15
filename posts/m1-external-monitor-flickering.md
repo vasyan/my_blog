@@ -4,12 +4,10 @@ description: "How to deal with it? Is it permanent? Check my solution for a flic
 date: '2023-08-11'
 categories:
     - 'devices'
+    - 'macos'
 ---
 
 ![monitor flickeering](/m1-monitor.webp "Monitor flickering with M1 chip")
-
-### The author is available to hire!
-Sorry to interapt the article flow, but for real, I'm looking for a next project to work as web-developer, [contact me](https://vasilyator.com/contact-card-info)
 
 ### In a nutshell:
 
