@@ -47,13 +47,9 @@ export default function Home() {
             <div className="text-md-center text-lg-start hero-text-block">
               <h1 className="hero-heading mb-2">Vasily Styazhkin</h1>
               <p className="text-paragraph mb-3">
-                Code since 2013. Email me at <a href="mailto:vasilyator@gmail.com">vasilyator@gmail.com</a>
+                CatDadDev. Email me at <a href="mailto:vasilyator@gmail.com">vasilyator@gmail.com</a>
+              </div>
               </p>
-
-              <p className="mb-0 text-nowrap btn btn-warning d-none">
-                Check out my <a href="/thai/list/1">Thai App</a>
-              </p>
-            </div>
           </section>
         </div>
         <div className="container">
